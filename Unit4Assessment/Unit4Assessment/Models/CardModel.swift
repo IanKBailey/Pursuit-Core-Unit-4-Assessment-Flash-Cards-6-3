@@ -10,14 +10,12 @@
 
 import Foundation
 
-struct Cards: Codable {
-    let cardListType: String
-    let apiVersion: String
-    let cards: [Card]
-}
+//struct Cards: Codable {
+//    let cards: [Card]
+//}
 
 struct Card: Codable {
     let id: String
-    let cardTitle: String
+    let quizTitle: String
     let facts: [String]
 }

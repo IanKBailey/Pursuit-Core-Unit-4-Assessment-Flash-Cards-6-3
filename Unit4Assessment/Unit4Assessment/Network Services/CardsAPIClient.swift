@@ -9,26 +9,26 @@
 import Foundation
 import NetworkHelper
 
-struct CardsAPIClient {
-  static func fetchCards(completion: @escaping (Result<[Card], AppError>) -> ()) {
-    let endpointURLString = "https://5daf8b36f2946f001481d81c.mockapi.io/api/v2/cards"
-    guard let url = URL(string: endpointURLString) else {
-      completion(.failure(.badURL(endpointURLString)))
-      return
-    }
-    let request = URLRequest(url: url)
-    NetworkHelper.shared.performDataTask(with: request) { (result) in
-      switch result {
-      case .failure(let appError):
-        completion(.failure(.networkClientError(appError)))
-      case .success(let data):
-        do {
-          let cardInfo = try JSONDecoder().decode(Cards.self, from: data)
-            completion(.success(cardInfo.cards))
-        } catch {
-          completion(.failure(.decodingError(error)))
-        }
-      }
-    }
-  }
-}
+//struct CardsAPIClient {
+//  static func fetchCards(completion: @escaping (Result<[Card], AppError>) -> ()) {
+//    let endpointURLString = "https://5daf8b36f2946f001481d81c.mockapi.io/api/v2/cards"
+//    guard let url = URL(string: endpointURLString) else {
+//      completion(.failure(.badURL(endpointURLString)))
+//      return
+//    }
+//    let request = URLRequest(url: url)
+//    NetworkHelper.shared.performDataTask(with: request) { (result) in
+//      switch result {
+//      case .failure(let appError):
+//        completion(.failure(.networkClientError(appError)))
+//      case .success(let data):
+//        do {
+//          let cardInfo = try JSONDecoder().decode(Cards.self, from: data)
+//            completion(.success(cardInfo.cards))
+//        } catch {
+//          completion(.failure(.decodingError(error)))
+//        }
+//      }
+//    }
+//  }
+//}

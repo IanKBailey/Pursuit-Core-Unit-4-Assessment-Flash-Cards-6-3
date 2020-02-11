@@ -11,11 +11,26 @@ import UIKit
 class CardCell: UICollectionViewCell {
     
     
-    public lazy var cardText: UILabel = {
+    private var currentCard: Card!
+    
+    private var isShowingAnswer = false
+    
+    public lazy var cardTitle: UILabel = {
         let lbl = UILabel()
         lbl.backgroundColor = .green
+        lbl.numberOfLines = 3
         return lbl
     }()
+    
+    public lazy var cardFactOne: UILabel = {
+        let lbl = UILabel ()
+        lbl.backgroundColor = .red
+        lbl.numberOfLines = 10
+        lbl.alpha = 0.0
+        return lbl
+    }()
+    
+
     
     public lazy var optionsButton: UIButton = {
         let button = UIButton()
@@ -23,6 +38,13 @@ class CardCell: UICollectionViewCell {
         return button
     }()
     
+    
+    
+    private lazy var longPressGesture: UILongPressGestureRecognizer = {
+      let gesture = UILongPressGestureRecognizer()
+      gesture.addTarget(self, action: #selector(didLongPress(_:)))
+      return gesture
+    }()
     
     
     override init(frame: CGRect) {
@@ -38,18 +60,62 @@ class CardCell: UICollectionViewCell {
     func commonInit() {
         setupLabel()
         setupButton()
+        addGestureRecognizer(longPressGesture)
+        setupFactOne()
+
     }
     
+    
+    @objc private func didLongPress(_ gesture: UILongPressGestureRecognizer) {
+    if gesture.state == .began || gesture.state == .changed {
+             return
+           }
+        isShowingAnswer.toggle()
+        self.animate()
+    }
+    
+    
+    private func animate() {
+       let duration: Double = 1.0
+       if isShowingAnswer {
+         UIView.transition(with: self, duration: duration, options: [.transitionFlipFromRight], animations: {
+            self.cardTitle.alpha = 0.0
+            self.cardFactOne.alpha = 1.0
+            self.cardFactOne.text = self.currentCard.facts.randomElement()
+         }, completion: nil)
+       } else {
+         UIView.transition(with: self, duration: duration, options: [.transitionFlipFromLeft], animations: {
+            self.cardTitle.alpha = 1.0
+            self.cardFactOne.alpha = 0.0
+         }, completion: nil)
+       }
+     }
+     
+        
     private func setupLabel() {
-        addSubview(cardText)
-        cardText.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(cardTitle)
+        cardTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            cardText.centerYAnchor.constraint(equalTo: centerYAnchor),
-            cardText.centerXAnchor.constraint(equalTo: centerXAnchor),
-            cardText.leadingAnchor.constraint(equalTo: leadingAnchor),
-            cardText.trailingAnchor.constraint(equalTo: trailingAnchor)
+            cardTitle.centerYAnchor.constraint(equalTo: centerYAnchor),
+            cardTitle.centerXAnchor.constraint(equalTo: centerXAnchor),
+            cardTitle.leadingAnchor.constraint(equalTo: leadingAnchor),
+            cardTitle.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
         ])
     }
+    
+    private func setupFactOne() {
+        addSubview(cardFactOne)
+        cardFactOne.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            cardFactOne.leadingAnchor.constraint(equalTo: leadingAnchor),
+            cardFactOne.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cardFactOne.centerYAnchor.constraint(equalTo: centerYAnchor),
+            cardFactOne.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
+    }
+
+    
     private func setupButton() {
         addSubview(optionsButton)
         optionsButton.translatesAutoresizingMaskIntoConstraints = false
@@ -62,7 +128,8 @@ class CardCell: UICollectionViewCell {
     }
     
     public func configureCell(with card: Card) {
-        cardText.text = card.cardTitle
+        currentCard = card
+        cardTitle.text = currentCard.quizTitle
     }
     
     
