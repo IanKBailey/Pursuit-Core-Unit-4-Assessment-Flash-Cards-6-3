@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardCell: UICollectionViewCell {
+class SearchCardCell: UICollectionViewCell {
     
     
     private var currentCard: Card!
@@ -80,6 +80,8 @@ class CardCell: UICollectionViewCell {
        if isShowingAnswer {
          UIView.transition(with: self, duration: duration, options: [.transitionFlipFromRight], animations: {
             self.cardTitle.alpha = 0.0
+            self.optionsButton.isEnabled = false
+            self.optionsButton.isHidden = true
             self.cardFactOne.alpha = 1.0
             self.cardFactOne.text = self.currentCard.facts.randomElement()
          }, completion: nil)
@@ -87,6 +89,8 @@ class CardCell: UICollectionViewCell {
          UIView.transition(with: self, duration: duration, options: [.transitionFlipFromLeft], animations: {
             self.cardTitle.alpha = 1.0
             self.cardFactOne.alpha = 0.0
+            self.optionsButton.isEnabled = true
+            self.optionsButton.isHidden = false
          }, completion: nil)
        }
      }

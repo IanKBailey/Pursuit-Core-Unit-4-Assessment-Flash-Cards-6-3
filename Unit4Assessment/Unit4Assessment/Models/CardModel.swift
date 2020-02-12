@@ -14,7 +14,7 @@ import Foundation
 //    let cards: [Card]
 //}
 
-struct Card: Codable {
+struct Card: Codable & Equatable {
     let id: String
     let quizTitle: String
     let facts: [String]

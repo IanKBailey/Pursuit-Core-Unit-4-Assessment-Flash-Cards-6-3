@@ -9,15 +9,17 @@
 /* Begin PBXBuildFile section */
 		560387A823F2FEE600F2357D /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 560387A723F2FEE600F2357D /* ImageKit */; };
 		560387AA23F3000C00F2357D /* FlashCardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387A923F3000C00F2357D /* FlashCardTabBarController.swift */; };
-		560387AD23F301C000F2357D /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387AC23F301C000F2357D /* CardsViewController.swift */; };
+		560387AD23F301C000F2357D /* SavedCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387AC23F301C000F2357D /* SavedCardsViewController.swift */; };
 		560387AF23F301D000F2357D /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387AE23F301D000F2357D /* CreateViewController.swift */; };
 		560387B123F301DC00F2357D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387B023F301DC00F2357D /* SearchViewController.swift */; };
-		560387B423F3081500F2357D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387B323F3081500F2357D /* CardView.swift */; };
+		560387B423F3081500F2357D /* SearchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387B323F3081500F2357D /* SearchCardView.swift */; };
 		560387B723F30CBA00F2357D /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387B623F30CBA00F2357D /* CardModel.swift */; };
-		560387B923F30D3500F2357D /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387B823F30D3500F2357D /* CardCell.swift */; };
+		560387B923F30D3500F2357D /* SearchCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387B823F30D3500F2357D /* SearchCardCell.swift */; };
 		560387BC23F311DB00F2357D /* CardsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387BB23F311DB00F2357D /* CardsAPIClient.swift */; };
 		560387C423F33EFC00F2357D /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 560387C323F33EFC00F2357D /* questions.json */; };
 		560387C623F33F2100F2357D /* QuestionServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387C523F33F2100F2357D /* QuestionServices.swift */; };
+		560387C823F4581700F2357D /* SavedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387C723F4581700F2357D /* SavedCardView.swift */; };
+		560387CA23F4605A00F2357D /* SavedCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560387C923F4605A00F2357D /* SavedCardCell.swift */; };
 		5790239823F2EE39000AA216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790239723F2EE39000AA216 /* AppDelegate.swift */; };
 		5790239A23F2EE39000AA216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790239923F2EE39000AA216 /* SceneDelegate.swift */; };
 		579023A123F2EE3B000AA216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 579023A023F2EE3B000AA216 /* Assets.xcassets */; };
@@ -37,15 +39,17 @@
 
 /* Begin PBXFileReference section */
 		560387A923F3000C00F2357D /* FlashCardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardTabBarController.swift; sourceTree = "<group>"; };
-		560387AC23F301C000F2357D /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		560387AC23F301C000F2357D /* SavedCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCardsViewController.swift; sourceTree = "<group>"; };
 		560387AE23F301D000F2357D /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		560387B023F301DC00F2357D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		560387B323F3081500F2357D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		560387B323F3081500F2357D /* SearchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCardView.swift; sourceTree = "<group>"; };
 		560387B623F30CBA00F2357D /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
-		560387B823F30D3500F2357D /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		560387B823F30D3500F2357D /* SearchCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCardCell.swift; sourceTree = "<group>"; };
 		560387BB23F311DB00F2357D /* CardsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsAPIClient.swift; sourceTree = "<group>"; };
 		560387C323F33EFC00F2357D /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		560387C523F33F2100F2357D /* QuestionServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionServices.swift; sourceTree = "<group>"; };
+		560387C723F4581700F2357D /* SavedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCardView.swift; sourceTree = "<group>"; };
+		560387C923F4605A00F2357D /* SavedCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCardCell.swift; sourceTree = "<group>"; };
 		5790239423F2EE39000AA216 /* Unit4Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unit4Assessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5790239723F2EE39000AA216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5790239923F2EE39000AA216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				560387A923F3000C00F2357D /* FlashCardTabBarController.swift */,
-				560387AC23F301C000F2357D /* CardsViewController.swift */,
+				560387AC23F301C000F2357D /* SavedCardsViewController.swift */,
 				560387AE23F301D000F2357D /* CreateViewController.swift */,
 				560387B023F301DC00F2357D /* SearchViewController.swift */,
 			);
@@ -101,8 +105,10 @@
 		560387B223F307DC00F2357D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				560387B323F3081500F2357D /* CardView.swift */,
-				560387B823F30D3500F2357D /* CardCell.swift */,
+				560387B323F3081500F2357D /* SearchCardView.swift */,
+				560387B823F30D3500F2357D /* SearchCardCell.swift */,
+				560387C723F4581700F2357D /* SavedCardView.swift */,
+				560387C923F4605A00F2357D /* SavedCardCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,17 +278,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				560387B423F3081500F2357D /* CardView.swift in Sources */,
+				560387B423F3081500F2357D /* SearchCardView.swift in Sources */,
 				560387B123F301DC00F2357D /* SearchViewController.swift in Sources */,
 				560387AF23F301D000F2357D /* CreateViewController.swift in Sources */,
-				560387AD23F301C000F2357D /* CardsViewController.swift in Sources */,
+				560387AD23F301C000F2357D /* SavedCardsViewController.swift in Sources */,
 				5790239823F2EE39000AA216 /* AppDelegate.swift in Sources */,
 				560387BC23F311DB00F2357D /* CardsAPIClient.swift in Sources */,
+				560387CA23F4605A00F2357D /* SavedCardCell.swift in Sources */,
 				560387B723F30CBA00F2357D /* CardModel.swift in Sources */,
 				5790239A23F2EE39000AA216 /* SceneDelegate.swift in Sources */,
 				560387AA23F3000C00F2357D /* FlashCardTabBarController.swift in Sources */,
 				560387C623F33F2100F2357D /* QuestionServices.swift in Sources */,
-				560387B923F30D3500F2357D /* CardCell.swift in Sources */,
+				560387C823F4581700F2357D /* SavedCardView.swift in Sources */,
+				560387B923F30D3500F2357D /* SearchCardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +445,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZEKMNK5YD3;
 				INFOPLIST_FILE = Unit4Assessment/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,7 +464,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZEKMNK5YD3;
 				INFOPLIST_FILE = Unit4Assessment/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

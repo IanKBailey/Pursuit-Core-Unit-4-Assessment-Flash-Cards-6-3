@@ -8,10 +8,9 @@
 
 import UIKit
 
-class CardView: UIView {
+class SearchCardView: UIView {
 
     public lazy var collectionView: UICollectionView = {
-      // create flow layout for collection view
       let layout = UICollectionViewFlowLayout()
       layout.scrollDirection = .vertical
       layout.itemSize = CGSize(width: 325, height: 350)
