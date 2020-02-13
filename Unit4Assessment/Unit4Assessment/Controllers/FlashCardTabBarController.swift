@@ -14,9 +14,11 @@ class FlashCardTabBarController: UITabBarController {
     private var dataPersistence = DataPersistence<Card>(filename: "savedCards.plist")
     
     
-    private lazy var cardsVC: SavedCardsViewController = {
+    private lazy var SavedcardsVC: SavedCardsViewController = {
            let viewController = SavedCardsViewController()
            viewController.tabBarItem = UITabBarItem(title: "Saved Cards", image: UIImage(systemName: "questionmark.circle"), tag: 0)
+        viewController.dataPersistence = dataPersistence
+        viewController.dataPersistence.delegate = viewController
            return viewController
          }()
          
@@ -29,6 +31,9 @@ class FlashCardTabBarController: UITabBarController {
          private lazy var searchVC: SearchViewController = {
             let viewController = SearchViewController()
             viewController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 2)
+            viewController.dataPersistence = dataPersistence
+            
+            
             return viewController
           }()
     
@@ -38,7 +43,7 @@ class FlashCardTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = [cardsVC,
+        viewControllers = [SavedcardsVC,
                            createVC,
                            searchVC]
         

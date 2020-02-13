@@ -34,7 +34,8 @@ class SearchCardCell: UICollectionViewCell {
     
     public lazy var optionsButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "ellipsis.circle.fill"), for: .normal)
+        button.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
+        button.addTarget(self, action: #selector(saveButtonPressed(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -74,15 +75,18 @@ class SearchCardCell: UICollectionViewCell {
         self.animate()
     }
     
+    @objc private func saveButtonPressed(_ sender: UIButton) {
+        print("saved item")
+    }
     
     private func animate() {
        let duration: Double = 1.0
        if isShowingAnswer {
          UIView.transition(with: self, duration: duration, options: [.transitionFlipFromRight], animations: {
             self.cardTitle.alpha = 0.0
+            self.cardFactOne.alpha = 1.0
             self.optionsButton.isEnabled = false
             self.optionsButton.isHidden = true
-            self.cardFactOne.alpha = 1.0
             self.cardFactOne.text = self.currentCard.facts.randomElement()
          }, completion: nil)
        } else {
